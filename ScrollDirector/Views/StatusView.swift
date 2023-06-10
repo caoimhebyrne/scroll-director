@@ -20,7 +20,7 @@ struct StatusView: View {
                 .padding(.bottom, 6)
             
             if !notificationHandler.permissionGranted || !hidHandler.permissionGranted {
-                self.notificationsWarning
+                self.permissionsWarning
             }
             
             self.actions
@@ -79,7 +79,7 @@ struct StatusView: View {
         }
     }
     
-    private var notificationsWarning: some View {
+    private var permissionsWarning: some View {
         VStack(alignment: .leading) {
             Label("Open settings to fix permissions!", systemImage: "exclamationmark.triangle.fill")
                 .foregroundColor(.yellow)
