@@ -1,6 +1,6 @@
 # ScrollDirector
 
-![Screenshot](.github/screenshot.png)
+![Screenshot](.github/preview.png)
 
 > **Note**:
 > ScrollDirector is still in development, and bugs are likely.
