@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F15E12302A35086C005758C1 /* ScrollDirectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */; };
+		F15E12322A35086C005758C1 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12312A35086C005758C1 /* StatusView.swift */; };
+		F15E12342A35086D005758C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15E12332A35086D005758C1 /* Assets.xcassets */; };
+		F15E12372A35086D005758C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15E12362A35086D005758C1 /* Preview Assets.xcassets */; };
+		F15E12442A350FF8005758C1 /* HIDHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12432A350FF8005758C1 /* HIDHandler.swift */; };
+		F15E12472A35121D005758C1 /* IOKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12462A35121D005758C1 /* IOKitExtensions.swift */; };
+		F15E124D2A351D22005758C1 /* PreferencePanesSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15E124C2A351D22005758C1 /* PreferencePanesSupport.framework */; };
+		F15E12512A352095005758C1 /* ScrollDirectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */; };
+		F15E12552A3523CB005758C1 /* CFSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12542A3523CB005758C1 /* CFSet.swift */; };
+		F15E12572A352926005758C1 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12562A352926005758C1 /* NotificationHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F15E122C2A35086C005758C1 /* ScrollDirector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollDirector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirectorApp.swift; sourceTree = "<group>"; };
+		F15E12312A35086C005758C1 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		F15E12332A35086D005758C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F15E12362A35086D005758C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F15E12382A35086D005758C1 /* ScrollDirector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScrollDirector.entitlements; sourceTree = "<group>"; };
+		F15E12412A350A9C005758C1 /* ScrollDirector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollDirector-Bridging-Header.h"; sourceTree = "<group>"; };
+		F15E12432A350FF8005758C1 /* HIDHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIDHandler.swift; sourceTree = "<group>"; };
+		F15E12462A35121D005758C1 /* IOKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOKitExtensions.swift; sourceTree = "<group>"; };
+		F15E12492A351CBE005758C1 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		F15E124C2A351D22005758C1 /* PreferencePanesSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanesSupport.framework; path = ../../../../System/Library/PrivateFrameworks/PreferencePanesSupport.framework; sourceTree = "<group>"; };
+		F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirectionHandler.swift; sourceTree = "<group>"; };
+		F15E12542A3523CB005758C1 /* CFSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSet.swift; sourceTree = "<group>"; };
+		F15E12562A352926005758C1 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F15E12292A35086C005758C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15E124D2A351D22005758C1 /* PreferencePanesSupport.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F15E12232A35086C005758C1 = {
+			isa = PBXGroup;
+			children = (
+				F15E122E2A35086C005758C1 /* ScrollDirector */,
+				F15E122D2A35086C005758C1 /* Products */,
+				F15E12482A351CBE005758C1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F15E122D2A35086C005758C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F15E122C2A35086C005758C1 /* ScrollDirector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F15E122E2A35086C005758C1 /* ScrollDirector */ = {
+			isa = PBXGroup;
+			children = (
+				F15E123F2A350A2B005758C1 /* Assets */,
+				F15E12422A350FDE005758C1 /* Handlers */,
+				F15E12452A351211005758C1 /* Extensions */,
+				F15E123E2A3509DB005758C1 /* Views */,
+				F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */,
+				F15E12412A350A9C005758C1 /* ScrollDirector-Bridging-Header.h */,
+			);
+			path = ScrollDirector;
+			sourceTree = "<group>";
+		};
+		F15E12352A35086D005758C1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F15E12362A35086D005758C1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F15E123E2A3509DB005758C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F15E12312A35086C005758C1 /* StatusView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F15E123F2A350A2B005758C1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F15E12332A35086D005758C1 /* Assets.xcassets */,
+				F15E12382A35086D005758C1 /* ScrollDirector.entitlements */,
+				F15E12352A35086D005758C1 /* Preview Content */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		F15E12422A350FDE005758C1 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				F15E12432A350FF8005758C1 /* HIDHandler.swift */,
+				F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */,
+				F15E12562A352926005758C1 /* NotificationHandler.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		F15E12452A351211005758C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F15E12462A35121D005758C1 /* IOKitExtensions.swift */,
+				F15E12542A3523CB005758C1 /* CFSet.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F15E12482A351CBE005758C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F15E124C2A351D22005758C1 /* PreferencePanesSupport.framework */,
+				F15E12492A351CBE005758C1 /* PreferencePanes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F15E122B2A35086C005758C1 /* ScrollDirector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F15E123B2A35086D005758C1 /* Build configuration list for PBXNativeTarget "ScrollDirector" */;
+			buildPhases = (
+				F15E12282A35086C005758C1 /* Sources */,
+				F15E12292A35086C005758C1 /* Frameworks */,
+				F15E122A2A35086C005758C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollDirector;
+			productName = ScrollDirector;
+			productReference = F15E122C2A35086C005758C1 /* ScrollDirector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F15E12242A35086C005758C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F15E122B2A35086C005758C1 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = F15E12272A35086C005758C1 /* Build configuration list for PBXProject "ScrollDirector" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F15E12232A35086C005758C1;
+			productRefGroup = F15E122D2A35086C005758C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F15E122B2A35086C005758C1 /* ScrollDirector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F15E122A2A35086C005758C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15E12372A35086D005758C1 /* Preview Assets.xcassets in Resources */,
+				F15E12342A35086D005758C1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F15E12282A35086C005758C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F15E12472A35121D005758C1 /* IOKitExtensions.swift in Sources */,
+				F15E12442A350FF8005758C1 /* HIDHandler.swift in Sources */,
+				F15E12572A352926005758C1 /* NotificationHandler.swift in Sources */,
+				F15E12322A35086C005758C1 /* StatusView.swift in Sources */,
+				F15E12512A352095005758C1 /* ScrollDirectionHandler.swift in Sources */,
+				F15E12302A35086C005758C1 /* ScrollDirectorApp.swift in Sources */,
+				F15E12552A3523CB005758C1 /* CFSet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F15E12392A35086D005758C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F15E123A2A35086D005758C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F15E123C2A35086D005758C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScrollDirector/ScrollDirector.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScrollDirector/Preview Content\"";
+				DEVELOPMENT_TEAM = 7V5NW3Q7QX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScrollDirector/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scroll Director";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.caoimhe.ScrollDirector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+			};
+			name = Debug;
+		};
+		F15E123D2A35086D005758C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScrollDirector/ScrollDirector.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScrollDirector/Preview Content\"";
+				DEVELOPMENT_TEAM = 7V5NW3Q7QX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScrollDirector/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Scroll Director";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.caoimhe.ScrollDirector;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F15E12272A35086C005758C1 /* Build configuration list for PBXProject "ScrollDirector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15E12392A35086D005758C1 /* Debug */,
+				F15E123A2A35086D005758C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F15E123B2A35086D005758C1 /* Build configuration list for PBXNativeTarget "ScrollDirector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15E123C2A35086D005758C1 /* Debug */,
+				F15E123D2A35086D005758C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F15E12242A35086C005758C1 /* Project object */;
+}
