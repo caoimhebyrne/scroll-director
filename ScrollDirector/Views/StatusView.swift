@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct StatusView: View {
+    @Environment(\.openURL) private var openURL
+
     @EnvironmentObject private var hidHandler: HIDHandler
     @EnvironmentObject private var scrollDirectionHandler: ScrollDirectionHandler
     @EnvironmentObject private var notificationHandler: NotificationHandler
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             self.header
@@ -88,7 +90,7 @@ struct StatusView: View {
     }
     
     private func settings() {
-        
+        NSApplication.shared.showSettings()
     }
     
     private func quit() {

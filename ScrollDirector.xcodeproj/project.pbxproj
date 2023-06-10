@@ -15,8 +15,10 @@
 		F15E12472A35121D005758C1 /* IOKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12462A35121D005758C1 /* IOKitExtensions.swift */; };
 		F15E124D2A351D22005758C1 /* PreferencePanesSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15E124C2A351D22005758C1 /* PreferencePanesSupport.framework */; };
 		F15E12512A352095005758C1 /* ScrollDirectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */; };
-		F15E12552A3523CB005758C1 /* CFSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12542A3523CB005758C1 /* CFSet.swift */; };
+		F15E12552A3523CB005758C1 /* CoreFoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12542A3523CB005758C1 /* CoreFoundationExtensions.swift */; };
 		F15E12572A352926005758C1 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12562A352926005758C1 /* NotificationHandler.swift */; };
+		F1DF00FE2A353A4400F1DA36 /* NSApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */; };
+		F1DF01022A353B3600F1DA36 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF01012A353B3600F1DA36 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,10 @@
 		F15E12492A351CBE005758C1 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
 		F15E124C2A351D22005758C1 /* PreferencePanesSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanesSupport.framework; path = ../../../../System/Library/PrivateFrameworks/PreferencePanesSupport.framework; sourceTree = "<group>"; };
 		F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirectionHandler.swift; sourceTree = "<group>"; };
-		F15E12542A3523CB005758C1 /* CFSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSet.swift; sourceTree = "<group>"; };
+		F15E12542A3523CB005758C1 /* CoreFoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreFoundationExtensions.swift; sourceTree = "<group>"; };
 		F15E12562A352926005758C1 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplicationExtension.swift; sourceTree = "<group>"; };
+		F1DF01012A353B3600F1DA36 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				F15E12312A35086C005758C1 /* StatusView.swift */,
+				F1DF01012A353B3600F1DA36 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,8 +122,9 @@
 		F15E12452A351211005758C1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F15E12542A3523CB005758C1 /* CoreFoundationExtensions.swift */,
 				F15E12462A35121D005758C1 /* IOKitExtensions.swift */,
-				F15E12542A3523CB005758C1 /* CFSet.swift */,
+				F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,6 +154,8 @@
 			dependencies = (
 			);
 			name = ScrollDirector;
+			packageProductDependencies = (
+			);
 			productName = ScrollDirector;
 			productReference = F15E122C2A35086C005758C1 /* ScrollDirector.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +184,8 @@
 				Base,
 			);
 			mainGroup = F15E12232A35086C005758C1;
+			packageReferences = (
+			);
 			productRefGroup = F15E122D2A35086C005758C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F15E12472A35121D005758C1 /* IOKitExtensions.swift in Sources */,
+				F1DF00FE2A353A4400F1DA36 /* NSApplicationExtension.swift in Sources */,
 				F15E12442A350FF8005758C1 /* HIDHandler.swift in Sources */,
+				F1DF01022A353B3600F1DA36 /* SettingsView.swift in Sources */,
 				F15E12572A352926005758C1 /* NotificationHandler.swift in Sources */,
 				F15E12322A35086C005758C1 /* StatusView.swift in Sources */,
 				F15E12512A352095005758C1 /* ScrollDirectionHandler.swift in Sources */,
 				F15E12302A35086C005758C1 /* ScrollDirectorApp.swift in Sources */,
-				F15E12552A3523CB005758C1 /* CFSet.swift in Sources */,
+				F15E12552A3523CB005758C1 /* CoreFoundationExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

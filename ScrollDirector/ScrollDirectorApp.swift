@@ -36,6 +36,15 @@ struct ScrollDirectorApp: App {
     }
     
     var body: some Scene {
+        Settings {
+            SettingsView()
+                // When the settings window is going be closed
+                .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { newValue in
+                    NSApplication.shared.deactivateMainWindow()
+                }
+        }
+
+        
         MenuBarExtra("Scroll Director", systemImage: "computermouse.fill") {
             StatusView()
                 .environmentObject(self.hidHandler)
@@ -43,6 +52,7 @@ struct ScrollDirectorApp: App {
                 .environmentObject(self.notificationHandler)
         }
         .menuBarExtraStyle(.window)
+ 
     }
 
 }
