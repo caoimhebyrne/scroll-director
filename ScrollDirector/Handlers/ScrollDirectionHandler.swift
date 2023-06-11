@@ -8,28 +8,33 @@
 import Combine
 import Foundation
 
-enum ScrollDirection : String {
+enum ScrollDirection : String, CaseIterable {
     case natural = "Natural"
     case normal = "Normal"
-    case unknown = "Unknown"
 }
 
 class ScrollDirectionHandler : ObservableObject {
+    private let settingsHandler: SettingsHandler
+    
     var didSetScrollDirection: (ScrollDirection) -> () = { _ in }
     
-    @Published var direction: ScrollDirection = .unknown {
+    @Published var direction: ScrollDirection = .natural {
         didSet {
             // If we aren't actually changing the scroll direction, there's no need to churn the CPU some more.
             if (oldValue == self.direction) {
                 return
             }
             
-            self.setScrollDirection(self.direction)
+            print("[ScrollDirectionHandler] Setting direction to \(self.direction).")
+            setSwipeScrollDirection(self.direction == .natural)
+            
             self.didSetScrollDirection(self.direction)
         }
     }
     
-    init(_ devices: [IOHIDDevice]) {
+    init(_ devices: [IOHIDDevice], _ settingsHandler: SettingsHandler) {
+        self.settingsHandler = settingsHandler
+
         // Queries the system for the current scroll direction through PreferencesPaneSupport.framework.
         if devices.isEmpty {
             self.direction = swipeScrollDirection() ? .natural : .normal
@@ -45,16 +50,8 @@ class ScrollDirectionHandler : ObservableObject {
             return
         }
         
-        // If any of the devices are an actual mouse, we should use the normal mode, otherwise, back to natural.
-        if devices.contains(where: { it in it.isActualMouseDevice }) {
-            self.direction = .normal
-        } else {
-            self.direction = .natural
-        }
-    }
-    
-    private func setScrollDirection(_ direction: ScrollDirection) {
-        print("[ScrollDirectionHandler] Setting direction to \(direction).")
-        setSwipeScrollDirection(direction == .natural)
+        let mouseDetected = devices.contains(where: { it in it.isActualMouseDevice })
+        let preferredScrollingMode = mouseDetected ? self.settingsHandler.preferredMouseScrollingMode : self.settingsHandler.preferredTrackpadScrollingMode
+        self.direction = preferredScrollingMode
     }
 }

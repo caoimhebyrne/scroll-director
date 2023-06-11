@@ -23,7 +23,7 @@ struct SettingsView: View {
                 }
                 .navigationTitle("Settings")
         }
-        .frame(minWidth: 400, maxWidth: 400, minHeight: 250, alignment: .topLeading)
+        .frame(minWidth: 450, maxWidth: 450, minHeight: 250, alignment: .topLeading)
     }
 }
 
@@ -34,12 +34,24 @@ struct ApplicationSettingsView: View {
 
     var body: some View {
         Form {
+            Picker("Mouse scrolling mode", selection: $settingsHandler.preferredMouseScrollingMode) {
+                ForEach(ScrollDirection.allCases, id: \.self) { direction in
+                    Text(direction.rawValue)
+                }
+            }
+            
+            Picker("Trackpad scrolling mode", selection: $settingsHandler.preferredTrackpadScrollingMode) {
+                ForEach(ScrollDirection.allCases, id: \.self) { direction in
+                    Text(direction.rawValue)
+                }
+            }
+            
             Toggle(isOn: $settingsHandler.launchAtLogin) {
                 Text("Launch at login")
             }
             
             Toggle(isOn: $settingsHandler.scrollingModeNotifications) {
-                Text("Send a notification when changing scrolling mode")
+                Text("Send scrolling mode notifications")
             }
             
             if !hidHandler.permissionGranted {

@@ -17,7 +17,7 @@ struct ScrollDirectorApp: App {
     init() {
         let hidHandler = HIDHandler()
         let settingsHandler = SettingsHandler()
-        let scrollDirectionHandler = ScrollDirectionHandler(hidHandler.devices)
+        let scrollDirectionHandler = ScrollDirectionHandler(hidHandler.devices, settingsHandler)
         let notificationHandler = NotificationHandler()
         
         hidHandler.onDeviceConnected = { _ in
@@ -46,12 +46,17 @@ struct ScrollDirectorApp: App {
                 .environmentObject(self.scrollDirectionHandler)
                 .environmentObject(self.notificationHandler)
                 // When the settings window is going be closed
-                .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { _ in
+                .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { info in
+                    // We need to ignore the fake-window created by the Picker/NSMenu.
+                    if let window = info.object as? NSWindow, window.className == "NSMenuWindowManagerWindow" {
+                        return
+                    }
+                    
                     NSApplication.shared.deactivateMainWindow()
                 }
-                // When the settings window is shown
+                // When the settings window is shown...
                 .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeMainNotification)) { _ in
-                    // Make sure our permission status is up to date
+                    // Make sure our permission status is up to date.
                     notificationHandler.requestAuthorization()
                 }
                 .fixedSize()
