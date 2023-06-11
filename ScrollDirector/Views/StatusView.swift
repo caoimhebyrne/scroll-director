@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StatusView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @Environment(\.openURL) private var openURL
 
     @EnvironmentObject private var hidHandler: HIDHandler
@@ -85,6 +86,7 @@ struct StatusView: View {
         VStack(alignment: .leading) {
             Label("Open settings to fix permissions!", systemImage: "exclamationmark.triangle.fill")
                 .foregroundColor(.yellow)
+                .font(.headline)
         }
         .padding(.bottom, 2)
     }

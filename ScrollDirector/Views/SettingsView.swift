@@ -11,43 +11,82 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         TabView {
-            GeneralSettingsView()
+            ApplicationSettingsView()
                 .tabItem {
-                    Label("General", systemImage: "gear")
+                    Label("Application", systemImage: "app.badge.fill")
+                }
+                .navigationTitle("Settings")
+            
+            AboutSettingsView()
+                .tabItem {
+                    Label("About", systemImage: "info.circle.fill")
                 }
         }
         .frame(minWidth: 400, minHeight: 200, alignment: .topLeading)
     }
 }
 
-struct GeneralSettingsView: View {
-    @AppStorage("launchAtLogin") var launchAtLogin = false
+struct ApplicationSettingsView: View {
+    @EnvironmentObject private var settingsHandler: SettingsHandler
+    @EnvironmentObject private var hidHandler: HIDHandler
+    @EnvironmentObject private var notificationHandler: NotificationHandler
 
     var body: some View {
         Form {
-            Toggle(isOn: $launchAtLogin) {
+            Toggle(isOn: $settingsHandler.launchAtLogin) {
                 Text("Launch at login")
+            }
+            
+            Toggle(isOn: $settingsHandler.scrollingModeNotifications) {
+                Text("Send a notification when changing scrolling mode")
+            }
+            
+            if !hidHandler.permissionGranted {
+                VStack(alignment: .leading) {
+                    Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
+                        .foregroundColor(.yellow)
+                        .font(.headline)
+                        .padding(.bottom, 2)
+                    
+                    Text("ScrollDirector needs the 'Input Monitoring' permission to detect when a mouse is connected. Go to **'Privacy and Security'** > **'Input Monitoring'** to re-enable it.")
+                        .foregroundColor(.secondary)
+                        .lineLimit(3, reservesSpace: true)
+                    
+                    Button("Go to System Settings") {
+                        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent")!)
+                    }
+                }
+                .padding(.top, 5)
+            }
+            
+            if !notificationHandler.permissionGranted && settingsHandler.scrollingModeNotifications {
+                VStack(alignment: .leading) {
+                    Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
+                        .foregroundColor(.yellow)
+                        .font(.headline)
+                        .padding(.bottom, 2)
+                    
+                    Text("ScrollDirector doesn't have permission to send notifications. Either disable **'Send a notification when changing scrolling mode'**, or, go to **'Notifications'** > **'ScrollDirector'** to re-enable them.")
+                        .foregroundColor(.secondary)
+                        .lineLimit(4, reservesSpace: true)
+                    
+                    Button("Go to System Settings") {
+                        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.notifications")!)
+                    }
+                }
+                .padding(.top, 5)
             }
         }
         .padding()
-        .onChange(of: launchAtLogin) { newValue in
-            do {
-                print("[Settings] \(newValue ? "Enabling" : "Disabling") launch at login.")
-                
-                if newValue {
-                    // Attempt to un-register if we are already registered, but don't bother catching an exception if it fails.
-                    if SMAppService.mainApp.status == .enabled {
-                        try? SMAppService.mainApp.unregister()
-                    }
-                    
-                    try SMAppService.mainApp.register()
-                } else {
-                    try SMAppService.mainApp.unregister()
-                }
-            } catch {
-                print("[Settings] Failed to \(newValue ? "enable" : "disable") launch at login!")
-            }
+    }
+}
+
+struct AboutSettingsView: View {
+    var body: some View {
+        Form {
+            Text("[GitHub](https://github.com/caoimhebyrne/scroll-director)")
         }
+        .padding()
     }
 }
 

@@ -19,6 +19,7 @@
 		F15E12572A352926005758C1 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12562A352926005758C1 /* NotificationHandler.swift */; };
 		F1DF00FE2A353A4400F1DA36 /* NSApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */; };
 		F1DF01022A353B3600F1DA36 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF01012A353B3600F1DA36 /* SettingsView.swift */; };
+		F1DF01072A353F3900F1DA36 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF01062A353F3900F1DA36 /* SettingsHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F15E12562A352926005758C1 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplicationExtension.swift; sourceTree = "<group>"; };
 		F1DF01012A353B3600F1DA36 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F1DF01062A353F3900F1DA36 /* SettingsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				F15E12432A350FF8005758C1 /* HIDHandler.swift */,
+				F1DF01062A353F3900F1DA36 /* SettingsHandler.swift */,
 				F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */,
 				F15E12562A352926005758C1 /* NotificationHandler.swift */,
 			);
@@ -216,6 +219,7 @@
 				F1DF00FE2A353A4400F1DA36 /* NSApplicationExtension.swift in Sources */,
 				F15E12442A350FF8005758C1 /* HIDHandler.swift in Sources */,
 				F1DF01022A353B3600F1DA36 /* SettingsView.swift in Sources */,
+				F1DF01072A353F3900F1DA36 /* SettingsHandler.swift in Sources */,
 				F15E12572A352926005758C1 /* NotificationHandler.swift in Sources */,
 				F15E12322A35086C005758C1 /* StatusView.swift in Sources */,
 				F15E12512A352095005758C1 /* ScrollDirectionHandler.swift in Sources */,
