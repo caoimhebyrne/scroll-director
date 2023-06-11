@@ -54,7 +54,9 @@ struct ScrollDirectorApp: App {
                     // Make sure our permission status is up to date
                     notificationHandler.requestAuthorization()
                 }
+                .fixedSize()
         }
+        .windowResizability(.contentSize)
         
         MenuBarExtra("Scroll Director", systemImage: "computermouse.fill") {
             StatusView()
