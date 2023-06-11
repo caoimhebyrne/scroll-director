@@ -18,6 +18,11 @@ class SettingsHandler : ObservableObject {
     
     @AppStorage("scrollingModeNotifications") var scrollingModeNotifications: Bool = true
     
+    func reset() {
+        self.launchAtLogin = false
+        self.scrollingModeNotifications = true
+    }
+
     func registerForLaunchAtLogin() {
         do {
             print("[Settings] \(self.launchAtLogin ? "Enabling" : "Disabling") launch at login.")

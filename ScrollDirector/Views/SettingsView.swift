@@ -21,8 +21,9 @@ struct SettingsView: View {
                 .tabItem {
                     Label("About", systemImage: "info.circle.fill")
                 }
+                .navigationTitle("Settings")
         }
-        .frame(minWidth: 400, minHeight: 200, alignment: .topLeading)
+        .frame(minWidth: 400, minHeight: 250, alignment: .topLeading)
     }
 }
 
@@ -82,9 +83,57 @@ struct ApplicationSettingsView: View {
 }
 
 struct AboutSettingsView: View {
+    @Environment(\.openURL) private var openURL: OpenURLAction
+    @EnvironmentObject private var settingsHandler: SettingsHandler
+    
     var body: some View {
-        Form {
-            Text("[GitHub](https://github.com/caoimhebyrne/scroll-director)")
+        VStack(alignment: .leading) {
+            HStack {
+                Image("Icon")
+                    .resizable()
+                    .frame(width: 75, height: 75)
+                
+                VStack(alignment: .leading) {
+                    Text("ScrollDirector")
+                        .font(.title)
+                    
+                    Text("Version 1.0.0")
+                        .font(.title3)
+                        .foregroundColor(.secondary)
+                }
+            }
+            
+            HStack {
+                Button {
+                    if let url = URL(string: "https://github.com/caoimhebyrne/scroll-director") {
+                        openURL(url)
+                    }
+                } label: {
+                    Text("View on GitHub")
+                        .frame(maxWidth: .infinity)
+                }
+                
+                Button {
+                    if let url = URL(string: "https://github.com/caoimhebyrne/scroll-director/issues/new") {
+                        openURL(url)
+                    }
+                } label: {
+                    Text("Report an issue")
+                        .frame(maxWidth: .infinity)
+                }
+                
+                Button {
+                    settingsHandler.reset()
+                } label: {
+                    Text("Reset settings")
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            
+            Spacer()
+            
+            Text("Developed by [Caoimhe Byrne](https://caoimhe.dev) with ❤️")
+                .foregroundColor(.secondary)
         }
         .padding()
     }
