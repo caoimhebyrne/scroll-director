@@ -22,4 +22,4 @@ jobs:
         with:
           action: build
           platform: ${{ matrix.platform }}
-          code-sign-identity: '-'
+          code-sign-identity: 'Apple Development'
