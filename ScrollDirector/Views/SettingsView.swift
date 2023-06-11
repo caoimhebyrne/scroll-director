@@ -23,7 +23,7 @@ struct SettingsView: View {
                 }
                 .navigationTitle("Settings")
         }
-        .frame(minWidth: 400, minHeight: 250, alignment: .topLeading)
+        .frame(minWidth: 400, maxWidth: 400, minHeight: 250, alignment: .topLeading)
     }
 }
 
