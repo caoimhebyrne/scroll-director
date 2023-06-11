@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and analyse default scheme using xcodebuild command
+    name: Build
     runs-on: macos-latest
     strategy:
       matrix:
@@ -20,4 +20,5 @@ jobs:
       - name: Build
         uses: mxcl/xcodebuild@v1
         with:
+          action: build
           platform: ${{ matrix.platform }}
