@@ -59,7 +59,6 @@ struct StatusView: View {
                 ForEach(self.hidHandler.devices) { device in
                     HStack {
                         Text(device.name)
-                            .opacity(0.65)
                         
                         Spacer()
                         
@@ -69,6 +68,7 @@ struct StatusView: View {
                             Image(systemName: "rectangle.and.hand.point.up.left.fill")
                         }
                     }
+                    .opacity(0.65)
                 }
             }
             .padding(.top, -5)
