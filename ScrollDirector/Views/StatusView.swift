@@ -42,7 +42,7 @@ struct StatusView: View {
                 Image(systemName: "gear")
             }
             .buttonStyle(.borderless)
-            .tint(.white)
+            .tint(.primary)
         }
     }
     
