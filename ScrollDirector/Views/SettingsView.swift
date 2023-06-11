@@ -33,64 +33,68 @@ struct ApplicationSettingsView: View {
     @EnvironmentObject private var notificationHandler: NotificationHandler
 
     var body: some View {
-        Form {
-            Picker("Mouse scrolling mode", selection: $settingsHandler.preferredMouseScrollingMode) {
-                ForEach(ScrollDirection.allCases, id: \.self) { direction in
-                    Text(direction.rawValue)
-                }
-            }
-            
-            Picker("Trackpad scrolling mode", selection: $settingsHandler.preferredTrackpadScrollingMode) {
-                ForEach(ScrollDirection.allCases, id: \.self) { direction in
-                    Text(direction.rawValue)
-                }
-            }
-            
-            Toggle(isOn: $settingsHandler.launchAtLogin) {
-                Text("Launch at login")
-            }
-            
-            Toggle(isOn: $settingsHandler.scrollingModeNotifications) {
-                Text("Send scrolling mode notifications")
-            }
-            
-            if !hidHandler.permissionGranted {
-                VStack(alignment: .leading) {
-                    Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
-                        .foregroundColor(.yellow)
-                        .font(.headline)
-                        .padding(.bottom, 2)
-                    
-                    Text("ScrollDirector needs the 'Input Monitoring' permission to detect when a mouse is connected. Go to **'Privacy and Security'** > **'Input Monitoring'** to re-enable it.")
-                        .foregroundColor(.secondary)
-                        .lineLimit(3, reservesSpace: true)
-                    
-                    Button("Go to System Settings") {
-                        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent")!)
+        VStack {
+            Form {
+                Picker("Mouse scrolling mode", selection: $settingsHandler.preferredMouseScrollingMode) {
+                    ForEach(ScrollDirection.allCases, id: \.self) { direction in
+                        Text(direction.rawValue)
                     }
                 }
-                .padding(.top, 5)
+                
+                Picker("Trackpad scrolling mode", selection: $settingsHandler.preferredTrackpadScrollingMode) {
+                    ForEach(ScrollDirection.allCases, id: \.self) { direction in
+                        Text(direction.rawValue)
+                    }
+                }
+                
+                Toggle(isOn: $settingsHandler.launchAtLogin) {
+                    Text("Launch at login")
+                }
+                
+                Toggle(isOn: $settingsHandler.scrollingModeNotifications) {
+                    Text("Send scrolling mode notifications")
+                }
+            }
+            
+            self.warnings
+        }
+        .padding()
+    }
+    
+    private var warnings: some View {
+        VStack(alignment: .leading) {
+            if !hidHandler.permissionGranted {
+                Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
+                    .foregroundColor(.yellow)
+                    .font(.headline)
+                    .padding(.bottom, 2)
+                
+                Text("ScrollDirector needs the 'Input Monitoring' permission to detect when a mouse is connected. Go to **'Privacy and Security'** > **'Input Monitoring'** to re-enable it.")
+                    .foregroundColor(.secondary)
+                    .lineLimit(3, reservesSpace: true)
+                
+                Button("Go to System Settings") {
+                    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent")!)
+                }
+                
             }
             
             if !notificationHandler.permissionGranted && settingsHandler.scrollingModeNotifications {
-                VStack(alignment: .leading) {
-                    Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
-                        .foregroundColor(.yellow)
-                        .font(.headline)
-                        .padding(.bottom, 2)
-                    
-                    Text("ScrollDirector doesn't have permission to send notifications. Either disable **'Send a notification when changing scrolling mode'**, or, go to **'Notifications'** > **'ScrollDirector'** to re-enable them.")
-                        .foregroundColor(.secondary)
-                        .lineLimit(4, reservesSpace: true)
-                    
-                    Button("Go to System Settings") {
-                        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.notifications")!)
-                    }
+                Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
+                    .foregroundColor(.yellow)
+                    .font(.headline)
+                    .padding(.bottom, 2)
+                
+                Text("ScrollDirector doesn't have permission to send notifications. Either disable **'Send a notification when changing scrolling mode'**, or, go to **'Notifications'** > **'ScrollDirector'** to re-enable them.")
+                    .foregroundColor(.secondary)
+                    .lineLimit(4, reservesSpace: true)
+                
+                Button("Go to System Settings") {
+                    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.notifications")!)
                 }
-                .padding(.top, 5)
             }
         }
-        .padding()
+        .padding(.top, 5)
     }
 }
 
