@@ -10,7 +10,6 @@
 		F15E12302A35086C005758C1 /* ScrollDirectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */; };
 		F15E12322A35086C005758C1 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12312A35086C005758C1 /* StatusView.swift */; };
 		F15E12342A35086D005758C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15E12332A35086D005758C1 /* Assets.xcassets */; };
-		F15E12372A35086D005758C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15E12362A35086D005758C1 /* Preview Assets.xcassets */; };
 		F15E12442A350FF8005758C1 /* HIDHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12432A350FF8005758C1 /* HIDHandler.swift */; };
 		F15E12472A35121D005758C1 /* IOKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E12462A35121D005758C1 /* IOKitExtensions.swift */; };
 		F15E124D2A351D22005758C1 /* PreferencePanesSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15E124C2A351D22005758C1 /* PreferencePanesSupport.framework */; };
@@ -27,7 +26,6 @@
 		F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDirectorApp.swift; sourceTree = "<group>"; };
 		F15E12312A35086C005758C1 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		F15E12332A35086D005758C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F15E12362A35086D005758C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15E12382A35086D005758C1 /* ScrollDirector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScrollDirector.entitlements; sourceTree = "<group>"; };
 		F15E12412A350A9C005758C1 /* ScrollDirector-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollDirector-Bridging-Header.h"; sourceTree = "<group>"; };
 		F15E12432A350FF8005758C1 /* HIDHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIDHandler.swift; sourceTree = "<group>"; };
@@ -84,14 +82,6 @@
 			path = ScrollDirector;
 			sourceTree = "<group>";
 		};
-		F15E12352A35086D005758C1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F15E12362A35086D005758C1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		F15E123E2A3509DB005758C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +96,6 @@
 			children = (
 				F15E12332A35086D005758C1 /* Assets.xcassets */,
 				F15E12382A35086D005758C1 /* ScrollDirector.entitlements */,
-				F15E12352A35086D005758C1 /* Preview Content */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -203,7 +192,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15E12372A35086D005758C1 /* Preview Assets.xcassets in Resources */,
 				F15E12342A35086D005758C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ScrollDirector/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 7V5NW3Q7QX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -388,7 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ScrollDirector/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 7V5NW3Q7QX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
