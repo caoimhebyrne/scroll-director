@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct ScrollDirectorApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @StateObject private var hidHandler: HIDHandler
     @StateObject private var settingsHandler: SettingsHandler
     @StateObject private var scrollDirectionHandler: ScrollDirectionHandler
     @StateObject private var notificationHandler: NotificationHandler
-    
+        
     init() {
         let hidHandler = HIDHandler()
         let settingsHandler = SettingsHandler()

@@ -19,6 +19,8 @@ class SettingsHandler : ObservableObject {
     @AppStorage("scrollingModeNotifications") var scrollingModeNotifications: Bool = true
     @AppStorage("preferredMouseScrollingMode") var preferredMouseScrollingMode: ScrollDirection = .normal
     @AppStorage("preferredTrackpadScrollingMode") var preferredTrackpadScrollingMode: ScrollDirection = .natural
+    
+    @AppStorage("didShowOnboarding") var didShowOnboarding: Bool = false
 
     func reset() {
         self.launchAtLogin = false
