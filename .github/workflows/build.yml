@@ -17,6 +17,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Create build configuration
+        run: |
+          touch BuildConfig.xcconfig
+          echo CODE_SIGN_STYLE=Automatic >> BuildConfig.xcconfig
+          echo DEVELOPMENT_TEAM= >> BuildConfig.xcconfig
+          echo CODE_SIGN_IDENTITY=- >> BuildConfig.xcconfig
+          
+          echo "cat BuildConfig.xcconfig"
+          cat BuildConfig.xcconfig
       - name: Build
         uses: mxcl/xcodebuild@v1
         with:
