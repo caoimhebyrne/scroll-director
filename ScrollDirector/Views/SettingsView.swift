@@ -132,8 +132,11 @@ struct AboutSettingsView: View {
             
             Spacer()
             
-            Text("Developed by [Caoimhe Byrne](https://caoimhe.dev) with ❤️")
-                .foregroundColor(.secondary)
+            VStack(alignment: .leading, spacing: 5) {
+                Text("Icon designed by [@newmirac](https://twitter.com/newmirac)")
+                Text("Developed by [Caoimhe Byrne](https://caoimhe.dev) with ❤️")
+            }
+            .foregroundColor(.secondary)
         }
         .padding()
     }
