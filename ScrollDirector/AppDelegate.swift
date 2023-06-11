@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         }
                 
         // We need to ignore the fake-window created by the Picker/NSMenu, and any other windows.
-        if window.className == "NSMenuWindowManagerWindow" || window.title == "Settings" {
+        if window.className == "NSMenuWindowManagerWindow" || window.title != "Settings" {
             return
         }
         
@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         guard let window = notification.object as? NSWindow else {
             return
         }
-                
+        
         if window.title != "Settings" && !window.className.contains("MenuBarExtraWindow") {
             return
         }
