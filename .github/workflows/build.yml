@@ -20,7 +20,7 @@ jobs:
       - name: Create build configuration
         run: |
           touch BuildConfig.xcconfig
-          echo CODE_SIGN_STYLE=Automatic >> BuildConfig.xcconfig
+          echo CODE_SIGN_STYLE=Manual >> BuildConfig.xcconfig
           echo DEVELOPMENT_TEAM= >> BuildConfig.xcconfig
           echo CODE_SIGN_IDENTITY=- >> BuildConfig.xcconfig
           
