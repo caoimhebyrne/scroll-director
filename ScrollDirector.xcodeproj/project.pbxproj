@@ -11,9 +11,7 @@
 		F15899D72A362E6C00D2E5A0 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899D62A362E6C00D2E5A0 /* OnboardingController.swift */; };
 		F15899D92A362F7600D2E5A0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899D82A362F7600D2E5A0 /* OnboardingView.swift */; };
 		F15899DB2A362FDA00D2E5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899DA2A362FDA00D2E5A0 /* AppDelegate.swift */; };
-		F15899DE2A36312C00D2E5A0 /* BlurredWindowEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899DD2A36312C00D2E5A0 /* BlurredWindowEffect.swift */; };
 		F15899E12A36385F00D2E5A0 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899E02A36385F00D2E5A0 /* WelcomePage.swift */; };
-		F15899E42A36432400D2E5A0 /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899E32A36432400D2E5A0 /* RoundedRectangleButtonStyle.swift */; };
 		F15899E62A364A9E00D2E5A0 /* PermissionsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899E52A364A9E00D2E5A0 /* PermissionsPage.swift */; };
 		F15899E82A36574B00D2E5A0 /* CompletePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899E72A36574B00D2E5A0 /* CompletePage.swift */; };
 		F15E12302A35086C005758C1 /* ScrollDirectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */; };
@@ -28,6 +26,8 @@
 		F1DF00FE2A353A4400F1DA36 /* NSApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */; };
 		F1DF01022A353B3600F1DA36 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF01012A353B3600F1DA36 /* SettingsView.swift */; };
 		F1DF01072A353F3900F1DA36 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DF01062A353F3900F1DA36 /* SettingsHandler.swift */; };
+		F1F7B55E2A3660AC00A4A6FE /* PermissionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B55D2A3660AC00A4A6FE /* PermissionsHandler.swift */; };
+		F1F7B5612A3666B700A4A6FE /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7B5602A3666B700A4A6FE /* RoundedRectangleButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +36,7 @@
 		F15899D62A362E6C00D2E5A0 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		F15899D82A362F7600D2E5A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F15899DA2A362FDA00D2E5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F15899DD2A36312C00D2E5A0 /* BlurredWindowEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredWindowEffect.swift; sourceTree = "<group>"; };
 		F15899E02A36385F00D2E5A0 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
-		F15899E32A36432400D2E5A0 /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		F15899E52A364A9E00D2E5A0 /* PermissionsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsPage.swift; sourceTree = "<group>"; };
 		F15899E72A36574B00D2E5A0 /* CompletePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletePage.swift; sourceTree = "<group>"; };
 		F15E122C2A35086C005758C1 /* ScrollDirector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollDirector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +55,8 @@
 		F1DF00FD2A353A4400F1DA36 /* NSApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSApplicationExtension.swift; sourceTree = "<group>"; };
 		F1DF01012A353B3600F1DA36 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F1DF01062A353F3900F1DA36 /* SettingsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
+		F1F7B55D2A3660AC00A4A6FE /* PermissionsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsHandler.swift; sourceTree = "<group>"; };
+		F1F7B5602A3666B700A4A6FE /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,31 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F15899DC2A36312000D2E5A0 /* Effects */ = {
+		F15899DF2A36385200D2E5A0 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				F15899DD2A36312C00D2E5A0 /* BlurredWindowEffect.swift */,
-			);
-			path = Effects;
-			sourceTree = "<group>";
-		};
-		F15899DF2A36385200D2E5A0 /* OnboardingView */ = {
-			isa = PBXGroup;
-			children = (
-				F15899E72A36574B00D2E5A0 /* CompletePage.swift */,
 				F15899D82A362F7600D2E5A0 /* OnboardingView.swift */,
 				F15899E02A36385F00D2E5A0 /* WelcomePage.swift */,
 				F15899E52A364A9E00D2E5A0 /* PermissionsPage.swift */,
+				F15899E72A36574B00D2E5A0 /* CompletePage.swift */,
 			);
-			path = OnboardingView;
-			sourceTree = "<group>";
-		};
-		F15899E22A36431A00D2E5A0 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				F15899E32A36432400D2E5A0 /* RoundedRectangleButtonStyle.swift */,
-			);
-			path = Styles;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		F15E12232A35086C005758C1 = {
@@ -124,10 +108,9 @@
 				F15E12422A350FDE005758C1 /* Handlers */,
 				F15E12452A351211005758C1 /* Extensions */,
 				F15E123E2A3509DB005758C1 /* Views */,
-				F15E12412A350A9C005758C1 /* ScrollDirector-Bridging-Header.h */,
 				F15E122F2A35086C005758C1 /* ScrollDirectorApp.swift */,
-				F15899D62A362E6C00D2E5A0 /* OnboardingController.swift */,
 				F15899DA2A362FDA00D2E5A0 /* AppDelegate.swift */,
+				F15899D62A362E6C00D2E5A0 /* OnboardingController.swift */,
 			);
 			path = ScrollDirector;
 			sourceTree = "<group>";
@@ -135,9 +118,8 @@
 		F15E123E2A3509DB005758C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F15899E22A36431A00D2E5A0 /* Styles */,
-				F15899DF2A36385200D2E5A0 /* OnboardingView */,
-				F15899DC2A36312000D2E5A0 /* Effects */,
+				F1F7B55F2A3666B000A4A6FE /* Styles */,
+				F15899DF2A36385200D2E5A0 /* Onboarding */,
 				F15E12312A35086C005758C1 /* StatusView.swift */,
 				F1DF01012A353B3600F1DA36 /* SettingsView.swift */,
 			);
@@ -147,6 +129,7 @@
 		F15E123F2A350A2B005758C1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F15E12412A350A9C005758C1 /* ScrollDirector-Bridging-Header.h */,
 				F15E12332A35086D005758C1 /* Assets.xcassets */,
 				F15E12382A35086D005758C1 /* ScrollDirector.entitlements */,
 			);
@@ -160,6 +143,7 @@
 				F1DF01062A353F3900F1DA36 /* SettingsHandler.swift */,
 				F15E12502A352095005758C1 /* ScrollDirectionHandler.swift */,
 				F15E12562A352926005758C1 /* NotificationHandler.swift */,
+				F1F7B55D2A3660AC00A4A6FE /* PermissionsHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -181,6 +165,14 @@
 				F15E12492A351CBE005758C1 /* PreferencePanes.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1F7B55F2A3666B000A4A6FE /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F1F7B5602A3666B700A4A6FE /* RoundedRectangleButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +262,9 @@
 				F15899DB2A362FDA00D2E5A0 /* AppDelegate.swift in Sources */,
 				F15899E82A36574B00D2E5A0 /* CompletePage.swift in Sources */,
 				F15E12512A352095005758C1 /* ScrollDirectionHandler.swift in Sources */,
+				F1F7B55E2A3660AC00A4A6FE /* PermissionsHandler.swift in Sources */,
 				F15899D92A362F7600D2E5A0 /* OnboardingView.swift in Sources */,
-				F15899DE2A36312C00D2E5A0 /* BlurredWindowEffect.swift in Sources */,
-				F15899E42A36432400D2E5A0 /* RoundedRectangleButtonStyle.swift in Sources */,
+				F1F7B5612A3666B700A4A6FE /* RoundedRectangleButtonStyle.swift in Sources */,
 				F15E12302A35086C005758C1 /* ScrollDirectorApp.swift in Sources */,
 				F15E12552A3523CB005758C1 /* CoreFoundationExtensions.swift in Sources */,
 			);

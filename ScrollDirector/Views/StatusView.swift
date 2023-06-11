@@ -12,17 +12,17 @@ struct StatusView: View {
     @Environment(\.openURL) private var openURL
 
     @EnvironmentObject private var hidHandler: HIDHandler
+    @EnvironmentObject private var settingsHandler: SettingsHandler
     @EnvironmentObject private var scrollDirectionHandler: ScrollDirectionHandler
-    @EnvironmentObject private var notificationHandler: NotificationHandler
+    @EnvironmentObject private var permissionsHandler: PermissionsHandler
     
     var body: some View {
         VStack(alignment: .leading) {
             self.header
             
             self.scrollDirectionStatus
-                .padding(.bottom, 6)
             
-            if !notificationHandler.permissionGranted || !hidHandler.permissionGranted {
+            if !permissionsHandler.inputMonitoringGranted || (!permissionsHandler.notificationsGranted && settingsHandler.scrollingModeNotifications) {
                 self.permissionsWarning
             }
             
@@ -85,11 +85,11 @@ struct StatusView: View {
     
     private var permissionsWarning: some View {
         VStack(alignment: .leading) {
-            Label("Open settings to fix permissions!", systemImage: "exclamationmark.triangle.fill")
+            Label("Open settings to fix permissions", systemImage: "exclamationmark.triangle.fill")
                 .foregroundColor(.yellow)
                 .font(.headline)
         }
-        .padding(.bottom, 2)
+        .padding(.vertical, 3)
     }
     
     private func settings() {

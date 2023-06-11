@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct CompletePage: View {
-    @EnvironmentObject private var hidHandler: HIDHandler
-    @EnvironmentObject private var notificationHandler: NotificationHandler
-    @EnvironmentObject private var settingsHandler: SettingsHandler
-    @EnvironmentObject private var scrollDirectionHandler: ScrollDirectionHandler
-
     var body: some View {
         VStack {
             Spacer()

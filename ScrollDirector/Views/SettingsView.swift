@@ -29,9 +29,8 @@ struct SettingsView: View {
 
 struct ApplicationSettingsView: View {
     @EnvironmentObject private var settingsHandler: SettingsHandler
-    @EnvironmentObject private var hidHandler: HIDHandler
-    @EnvironmentObject private var notificationHandler: NotificationHandler
-
+    @EnvironmentObject private var permissionsHandler: PermissionsHandler
+    
     var body: some View {
         VStack {
             Form {
@@ -62,35 +61,34 @@ struct ApplicationSettingsView: View {
     }
     
     private var warnings: some View {
-        VStack(alignment: .leading) {
-            if !hidHandler.permissionGranted {
+        VStack(alignment: .leading, spacing: 3) {
+            if !permissionsHandler.inputMonitoringGranted {
                 Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
                     .foregroundColor(.yellow)
                     .font(.headline)
-                    .padding(.bottom, 2)
                 
                 Text("ScrollDirector needs the 'Input Monitoring' permission to detect when a mouse is connected. Go to **'Privacy and Security'** > **'Input Monitoring'** to re-enable it.")
                     .foregroundColor(.secondary)
                     .lineLimit(3, reservesSpace: true)
                 
-                Button("Go to System Settings") {
-                    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent")!)
+                Button("Open System Settings") {
+                    self.permissionsHandler.openInputMonitoringSettings()
                 }
-                
-            }
-            
-            if !notificationHandler.permissionGranted && settingsHandler.scrollingModeNotifications {
-                Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
-                    .foregroundColor(.yellow)
-                    .font(.headline)
-                    .padding(.bottom, 2)
-                
-                Text("ScrollDirector doesn't have permission to send notifications. Either disable **'Send a notification when changing scrolling mode'**, or, go to **'Notifications'** > **'ScrollDirector'** to re-enable them.")
-                    .foregroundColor(.secondary)
-                    .lineLimit(4, reservesSpace: true)
-                
-                Button("Go to System Settings") {
-                    NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.notifications")!)
+                .padding(.top, 3)
+            } else {
+                if !permissionsHandler.notificationsGranted && settingsHandler.scrollingModeNotifications {
+                    Label("ScrollDirector doesn't have the correct permissions", systemImage: "exclamationmark.triangle")
+                        .foregroundColor(.yellow)
+                        .font(.headline)
+                    
+                    Text("ScrollDirector doesn't have permission to send notifications. Either disable **'Send a notification when changing scrolling mode'**, or, go to **'Notifications'** > **'ScrollDirector'** to re-enable them.")
+                        .foregroundColor(.secondary)
+                        .lineLimit(3, reservesSpace: true)
+                    
+                    Button("Open System Settings") {
+                        self.permissionsHandler.openNotificationsSettings()
+                    }
+                    .padding(.top, 3)
                 }
             }
         }

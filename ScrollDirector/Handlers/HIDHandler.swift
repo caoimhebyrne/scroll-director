@@ -17,9 +17,7 @@ class HIDHandler : ObservableObject {
     
     /// Contains the currently connected devices.
     @Published var devices: [IOHIDDevice] = []
-    
-    @Published var permissionGranted: Bool = false
-    
+        
     /// Called when a mouse or trackpad is connected.
     var onDeviceConnected: (IOHIDDevice) -> () = { _ in }
     
@@ -81,13 +79,7 @@ class HIDHandler : ObservableObject {
         let result = IOHIDManagerOpen(hidManager, IOOptionBits(kIOHIDOptionsTypeNone))
         if result != kIOReturnSuccess {
             print("[HIDManager] IOHidManagerOpen returned \(String(format: "%02X", result))!")
-            self.permissionGranted = result != kIOReturnNotPermitted
-        } else {
-            self.permissionGranted = true
+            PermissionsHandler.shared.inputMonitoringGranted = result != kIOReturnNotPermitted
         }
-    }
-    
-    func requestAuthorization() {
-        self.permissionGranted = IOHIDRequestAccess(kIOHIDRequestTypeListenEvent)
     }
 }

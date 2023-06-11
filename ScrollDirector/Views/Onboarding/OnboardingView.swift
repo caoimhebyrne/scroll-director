@@ -21,33 +21,16 @@ enum OnboardingPage: CaseIterable {
             PermissionsPage()
         case .complete:
             CompletePage()
-        default:
-            Text("NOT IMPLEMENTED")
         }
     }
 }
 
 struct OnboardingView: View {
-    @State private var currentPage: OnboardingPage = .welcome
-    
     @EnvironmentObject private var appDelegate: AppDelegate
-    
-    @StateObject private var hidHandler: HIDHandler
-    @StateObject private var settingsHandler: SettingsHandler
-    @StateObject private var scrollDirectionHandler: ScrollDirectionHandler
-    @StateObject private var notificationHandler: NotificationHandler
-        
-    init() {
-        let hidHandler = HIDHandler()
-        let settingsHandler = SettingsHandler()
-        let scrollDirectionHandler = ScrollDirectionHandler(hidHandler.devices, settingsHandler)
+    @EnvironmentObject private var permissionsHandler: PermissionsHandler
 
-        self._hidHandler = StateObject(wrappedValue: hidHandler)
-        self._settingsHandler = StateObject(wrappedValue: settingsHandler)
-        self._scrollDirectionHandler = StateObject(wrappedValue: scrollDirectionHandler)
-        self._notificationHandler = StateObject(wrappedValue: NotificationHandler())
-    }
-    
+    @State private var currentPage: OnboardingPage = .welcome
+
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
@@ -73,19 +56,13 @@ struct OnboardingView: View {
                 }
                 .buttonStyle(RoundedRectangleButtonStyle())
                 .padding(.top)
-                .disabled(self.currentPage == OnboardingPage.permissions && !hidHandler.permissionGranted)
+                .disabled(self.currentPage == OnboardingPage.permissions && !self.permissionsHandler.inputMonitoringGranted)
             }
         }
         .padding()
         .frame(minWidth: 500, minHeight: 400)
-        .environmentObject(hidHandler)
-        .environmentObject(notificationHandler)
-        .environmentObject(settingsHandler)
-        .environmentObject(scrollDirectionHandler)
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeMainNotification)) { _ in
-            // Make sure our permission status is up to date.
-            notificationHandler.requestAuthorization()
-            hidHandler.requestAuthorization()
+            self.permissionsHandler.pollPermissions()
         }
     }
     

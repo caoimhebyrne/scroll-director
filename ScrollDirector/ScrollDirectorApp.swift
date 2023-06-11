@@ -15,7 +15,8 @@ struct ScrollDirectorApp: App {
     @StateObject private var settingsHandler: SettingsHandler
     @StateObject private var scrollDirectionHandler: ScrollDirectionHandler
     @StateObject private var notificationHandler: NotificationHandler
-        
+    @StateObject private var permissionsHandler: PermissionsHandler
+    
     init() {
         let hidHandler = HIDHandler()
         let settingsHandler = SettingsHandler()
@@ -38,44 +39,30 @@ struct ScrollDirectorApp: App {
         self._settingsHandler = StateObject(wrappedValue: settingsHandler)
         self._scrollDirectionHandler = StateObject(wrappedValue: scrollDirectionHandler)
         self._notificationHandler = StateObject(wrappedValue: notificationHandler)
+        self._permissionsHandler = StateObject(wrappedValue: PermissionsHandler.shared)
     }
     
     var body: some Scene {
         Settings {
-            SettingsView()
-                .environmentObject(self.hidHandler)
-                .environmentObject(self.settingsHandler)
-                .environmentObject(self.scrollDirectionHandler)
-                .environmentObject(self.notificationHandler)
-                // When the settings window is going be closed
-                .onReceive(NotificationCenter.default.publisher(for: NSWindow.willCloseNotification)) { info in
-                    // We need to ignore the fake-window created by the Picker/NSMenu.
-                    if let window = info.object as? NSWindow, window.className == "NSMenuWindowManagerWindow" {
-                        return
-                    }
-                    
-                    NSApplication.shared.deactivateMainWindow()
-                }
-                // When the settings window is shown...
-                .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeMainNotification)) { _ in
-                    // Make sure our permission status is up to date.
-                    notificationHandler.requestAuthorization()
-                }
-                .fixedSize()
+            self.applyEnvironment {
+                SettingsView()
+                    .fixedSize()
+            }
         }
         .windowResizability(.contentSize)
         
         MenuBarExtra("Scroll Director", systemImage: "computermouse.fill") {
-            StatusView()
-                .environmentObject(self.hidHandler)
-                .environmentObject(self.scrollDirectionHandler)
-                .environmentObject(self.notificationHandler)
-                .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { a in
-                    notificationHandler.requestAuthorization()
-                }
+            self.applyEnvironment { StatusView() }
         }
         .menuBarExtraStyle(.window)
- 
     }
-
+    
+    func applyEnvironment<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
+        return content()
+            .environmentObject(self.hidHandler)
+            .environmentObject(self.settingsHandler)
+            .environmentObject(self.scrollDirectionHandler)
+            .environmentObject(self.notificationHandler)
+            .environmentObject(self.permissionsHandler)
+    }
 }
