@@ -114,7 +114,7 @@ struct AboutSettingsView: View {
                 }
                 
                 Button {
-                    if let url = URL(string: "https://github.com/caoimhebyrne/scroll-director/issues/new") {
+                    if let url = URL(string: "https://github.com/caoimhebyrne/scroll-director/issues/new/choose") {
                         openURL(url)
                     }
                 } label: {
