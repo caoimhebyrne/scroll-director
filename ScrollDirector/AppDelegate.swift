@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
 //        if !self.settingsHandler.didShowOnboarding {
-        self.onboardingController.show(content: OnboardingView().environmentObject(self))
+        self.onboardingController.show(content: OnboardingView().environmentObject(self) )
 //        }
     }
    

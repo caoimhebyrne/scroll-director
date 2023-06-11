@@ -23,7 +23,7 @@ struct WelcomePage: View {
                     .font(.title)
                     .fontWeight(.bold)
                 
-                Text("Thanks for downloading ScrollDirector. Let's go through some tips and tricks for an optimal experience.")
+                Text("Thanks for downloading ScrollDirector. Let's go through some things to get started.")
                     .font(.title3)
             }
             .multilineTextAlignment(.center)

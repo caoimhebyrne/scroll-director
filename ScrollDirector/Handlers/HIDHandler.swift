@@ -86,4 +86,8 @@ class HIDHandler : ObservableObject {
             self.permissionGranted = true
         }
     }
+    
+    func requestAuthorization() {
+        self.permissionGranted = IOHIDRequestAccess(kIOHIDRequestTypeListenEvent)
+    }
 }

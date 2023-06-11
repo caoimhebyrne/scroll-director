@@ -26,11 +26,11 @@ class OnboardingController {
 
         self.window.makeKeyAndOrderFront(nil)
         self.window.center()
-
-        UserDefaults.standard.set(true, forKey: "didShowOnboarding")
     }
     
     func hide() {
+        UserDefaults.standard.set(true, forKey: "didShowOnboarding")
+
         self.window.close()
         
         NSApplication.shared.setActivationPolicy(.accessory)
