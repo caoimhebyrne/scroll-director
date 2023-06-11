@@ -61,10 +61,12 @@ struct OnboardingView: View {
                 Spacer()
                 
                 Button {
-                    if self.currentPage == OnboardingPage.allCases.last {
-                        self.done()
-                    } else {
-                        self.next()
+                    withAnimation(.easeInOut(duration: 0.15)) {
+                        if self.currentPage == OnboardingPage.allCases.last {
+                            self.done()
+                        } else {
+                            self.next()
+                        }
                     }
                 } label: {
                     self.buttonLabel
