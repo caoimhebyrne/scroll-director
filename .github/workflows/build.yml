@@ -1,0 +1,23 @@
+name: Build Project
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build and analyse default scheme using xcodebuild command
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        platform:
+          - macOS
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        uses: mxcl/xcodebuild@v1
+        with:
+          platform: ${{ matrix.platform }}
