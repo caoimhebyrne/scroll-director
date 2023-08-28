@@ -24,9 +24,9 @@ jobs:
           platform: ${{ matrix.platform }}
       - name: Test
         run: |
-          ls
+          ls -lah build
       - name: Upload application
         uses: actions/upload-artifact@v3
         with:
           name: Application
-          path: ScrollDirector.app
+          path: build/ScrollDirector.app
