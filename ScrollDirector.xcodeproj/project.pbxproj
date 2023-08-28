@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F15899D52A35FFA800D2E5A0 /* BuildConfig.xcconfig.sample in Resources */ = {isa = PBXBuildFile; fileRef = F15899D42A35FFA800D2E5A0 /* BuildConfig.xcconfig.sample */; };
 		F15899D72A362E6C00D2E5A0 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899D62A362E6C00D2E5A0 /* OnboardingController.swift */; };
 		F15899D92A362F7600D2E5A0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899D82A362F7600D2E5A0 /* OnboardingView.swift */; };
 		F15899DB2A362FDA00D2E5A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15899DA2A362FDA00D2E5A0 /* AppDelegate.swift */; };
@@ -31,8 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F146295E2A35FDFE00274E4E /* BuildConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfig.xcconfig; sourceTree = "<group>"; };
-		F15899D42A35FFA800D2E5A0 /* BuildConfig.xcconfig.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BuildConfig.xcconfig.sample; sourceTree = "<group>"; };
 		F15899D62A362E6C00D2E5A0 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		F15899D82A362F7600D2E5A0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F15899DA2A362FDA00D2E5A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,8 +82,6 @@
 		F15E12232A35086C005758C1 = {
 			isa = PBXGroup;
 			children = (
-				F146295E2A35FDFE00274E4E /* BuildConfig.xcconfig */,
-				F15899D42A35FFA800D2E5A0 /* BuildConfig.xcconfig.sample */,
 				F15E122E2A35086C005758C1 /* ScrollDirector */,
 				F15E122D2A35086C005758C1 /* Products */,
 				F15E12482A351CBE005758C1 /* Frameworks */,
@@ -237,7 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15899D52A35FFA800D2E5A0 /* BuildConfig.xcconfig.sample in Resources */,
 				F15E12342A35086D005758C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +269,6 @@
 /* Begin XCBuildConfiguration section */
 		F15E12392A35086D005758C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F146295E2A35FDFE00274E4E /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -336,7 +329,6 @@
 		};
 		F15E123A2A35086D005758C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F146295E2A35FDFE00274E4E /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -390,13 +382,14 @@
 		};
 		F15E123C2A35086D005758C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F146295E2A35FDFE00274E4E /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -411,6 +404,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.caoimhe.ScrollDirector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -423,13 +417,14 @@
 		};
 		F15E123D2A35086D005758C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F146295E2A35FDFE00274E4E /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -444,6 +439,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.caoimhe.ScrollDirector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
