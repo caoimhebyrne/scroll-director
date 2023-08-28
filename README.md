@@ -13,13 +13,8 @@ Are you tired of macOS not having an independent setting for 'Natural Scrolling'
 	```console
 	$ git clone https://github.com/caoimhebyrne/scroll-director.git
 	$ cd scroll-director
-	```
-2. Create a build config file, like the `BuildConfig.xcconfig.sample`.
-	```console
-	$ mv BuildConfig.xcconfig.sample BuildConfig.xcconfig
-	```
-3. Update the contents of the `BuildConfig.xcconfig` file to match your Developer ID.
-4. Open the project in Xcode.
+    ```
+2. Open the project in Xcode.
 
 ## Installation
 
