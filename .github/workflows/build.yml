@@ -23,7 +23,7 @@ jobs:
           action: build
           platform: ${{ matrix.platform }}
       - name: Package application
-        run: cd build/Release/ScrollDirector.app && zip -r ../ScrollDirector.app.zip *
+        run: zip -r build/Release/ScrollDirector.app.zip build/Release/ScrollDirector.app
       - name: Upload application
         uses: actions/upload-artifact@v3
         with:
