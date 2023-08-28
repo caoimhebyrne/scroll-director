@@ -22,11 +22,10 @@ jobs:
         with:
           action: build
           platform: ${{ matrix.platform }}
-      - name: Test
-        run: |
-          ls -lah build/Release
+      - name: Package application
+        run: cd build/Release/ScrollDirector.app && zip -r ../ScrollDirector.app.zip *
       - name: Upload application
         uses: actions/upload-artifact@v3
         with:
-          name: Application
-          path: build/Release/ScrollDirector.app
+          name: ScrollDirector.app
+          path: build/Release/ScrollDirector.app.zip
